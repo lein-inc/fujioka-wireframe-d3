@@ -1,0 +1,42 @@
+{
+ "gen_str01": {
+  "title": "File:Makino-S33-MachiningCenter-example.jpg",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Makino-S33-MachiningCenter-example.jpg"
+ },
+ "gen_str02": {
+  "title": "File:Injection mold of phone housing.jpg",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Injection_mold_of_phone_housing.jpg"
+ },
+ "gen_str03": {
+  "title": "File:MillingCutterSlotEndMillBallnose.jpg",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:MillingCutterSlotEndMillBallnose.jpg"
+ },
+ "gen_case01": {
+  "title": "File:Samsung NX1 chassis.jpg",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Samsung_NX1_chassis.jpg"
+ },
+ "gen_case02": {
+  "title": "File:Casse-noix inox 04.jpg",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Casse-noix_inox_04.jpg"
+ },
+ "gen_case03": {
+  "title": "File:Lathe Threaded Arbor With Bolt.jpg",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Lathe_Threaded_Arbor_With_Bolt.jpg"
+ },
+ "gen_mask": {
+  "title": "File:Lathe Center Drilling.jpg",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Lathe_Center_Drilling.jpg"
+ },
+ "gen_biz": {
+  "title": "File:Lathe Boring.jpg",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Lathe_Boring.jpg"
+ }
+}

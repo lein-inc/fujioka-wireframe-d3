@@ -1,0 +1,265 @@
+/* ==================================================
+   藤岡エンジニアリング Ver3 デザインレイヤー
+   wireframe.css の後に読み込み、ブランドガイドラインを適用する
+   キーカラー: ロゴパープル #7F1084 / 差し色 オレンジ #ED6C00
+   フォント: Noto Sans JP + Inter + Noto Serif JP
+   ================================================== */
+
+:root {
+  --fj-purple: #7F1084;
+  --fj-purple-dark: #5C0B60;
+  --fj-purple-light: #A75FAA;
+  --fj-purple-pale: #F5EAF6;
+  --fj-orange: #ED6C00;
+  --fj-gray: #7A7E82;
+  --fj-ink: #221815;
+  --fj-bg: #FAF9FA;
+  --fj-serif: "Noto Serif JP", serif;
+  --fj-en: "Inter", sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  color: var(--fj-ink);
+  font-feature-settings: "palt";
+  letter-spacing: 0.02em;
+}
+
+a { color: var(--fj-ink); }
+
+/* ============ WF banner → design comp banner ============ */
+.wf-banner {
+  background: var(--fj-ink);
+  color: #fff;
+  font-family: var(--fj-en);
+  letter-spacing: 0.08em;
+}
+
+/* ============ Header ============ */
+.site-header { padding: 16px 0; border-bottom: 1px solid #eee; }
+.site-logo {
+  border: none; padding: 0;
+  display: flex; align-items: center; gap: 10px;
+}
+.site-logo img { height: 44px; width: auto; }
+.gnav ul { gap: 26px; font-size: 13.5px; font-weight: 500; }
+.gnav a { position: relative; padding-bottom: 6px; color: var(--fj-ink); }
+.gnav a:hover { text-decoration: none; color: var(--fj-purple); }
+.gnav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 0;
+  background: var(--fj-purple); transition: width .25s;
+}
+.gnav a:hover::after { width: 100%; }
+.gnav li:last-child a {
+  background: var(--fj-orange); color: #fff; padding: 9px 18px 9px; border-radius: 3px;
+}
+.gnav li:last-child a:hover { background: #c95c00; color: #fff; }
+.gnav li:last-child a::after { display: none; }
+
+/* ============ Hero (TOP) ============ */
+.hero {
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(167,95,170,0.35), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(237,108,0,0.18), transparent 55%),
+    linear-gradient(135deg, #2A0E2C 0%, var(--fj-purple-dark) 45%, var(--fj-purple) 100%);
+  color: #fff;
+  border-bottom: none;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: repeating-linear-gradient(115deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 90px);
+  pointer-events: none;
+}
+.hero .catch {
+  color: #fff;
+  font-family: var(--fj-serif);
+  font-weight: 600;
+  font-size: 52px;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.25);
+}
+.hero .sub { color: rgba(255,255,255,0.85); }
+.hero span[style*="border:1px solid #999"] {
+  border-color: rgba(255,255,255,0.45) !important;
+  color: #fff; border-radius: 999px; background: rgba(255,255,255,0.08);
+}
+.hero .hero-visual {
+  background:
+    linear-gradient(120deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04) 45%, rgba(255,255,255,0.12)),
+    linear-gradient(180deg, #6b6f74, #3a3d40);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.75);
+  border-radius: 6px;
+}
+
+/* ============ Page hero (下層) ============ */
+.page-hero {
+  background:
+    radial-gradient(900px 400px at 90% -20%, rgba(167,95,170,0.30), transparent 60%),
+    linear-gradient(120deg, #2A0E2C 0%, var(--fj-purple-dark) 60%, var(--fj-purple) 100%);
+  color: #fff; border-bottom: none; padding: 72px 0;
+}
+.page-hero h1 { color: #fff; font-family: var(--fj-serif); font-weight: 600; letter-spacing: 0.06em; }
+.page-hero .en { color: var(--fj-purple-light); font-family: var(--fj-en); font-weight: 600; }
+.breadcrumb { background: var(--fj-bg); border-bottom: 1px solid #eee; }
+
+/* ============ Section ============ */
+section { border-bottom: none; }
+section[style*="background:#f4f4f4"], section[style*="background:#eee"] { background: var(--fj-bg) !important; }
+.section-title { border-bottom: none; position: relative; padding-bottom: 16px; }
+.section-title::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 48px; height: 3px;
+  background: linear-gradient(90deg, var(--fj-purple), var(--fj-orange));
+}
+.sec-h { flex-direction: column-reverse; align-items: flex-start; gap: 4px; margin-bottom: 16px; }
+.sec-h .en {
+  font-family: var(--fj-en); font-weight: 700; font-size: 12px;
+  color: var(--fj-purple); letter-spacing: 0.3em;
+}
+.sec-h h2 { position: relative; padding-bottom: 14px; }
+.sec-h h2::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 48px; height: 3px;
+  background: linear-gradient(90deg, var(--fj-purple), var(--fj-orange));
+}
+.section-lead { color: var(--fj-gray); }
+
+/* ============ Buttons ============ */
+.btn {
+  background: var(--fj-purple); border-color: var(--fj-purple);
+  border-radius: 3px; transition: background .2s, color .2s;
+}
+.btn:hover { background: var(--fj-purple-dark); }
+.btn.outline { background: #fff; color: var(--fj-purple); border-color: var(--fj-purple); }
+.btn.outline:hover { background: var(--fj-purple-pale); color: var(--fj-purple-dark); }
+
+/* ============ Cards ============ */
+.card {
+  border: 1px solid #eee; border-radius: 6px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(34,24,21,0.05);
+  transition: box-shadow .25s, transform .25s;
+  border-top: 3px solid var(--fj-purple);
+}
+.card:hover { box-shadow: 0 8px 24px rgba(127,16,132,0.12); transform: translateY(-3px); }
+.card .card-meta { color: var(--fj-purple); font-family: var(--fj-en); font-weight: 600; }
+.card p { color: var(--fj-gray); }
+
+/* ============ Image placeholder → mood tone ============ */
+.img-ph {
+  background:
+    linear-gradient(120deg, rgba(255,255,255,0.35), transparent 40%, rgba(255,255,255,0.18) 75%),
+    linear-gradient(160deg, #9aa0a6 0%, #6b7075 55%, #4a4e52 100%);
+  border: none; color: rgba(255,255,255,0.85); border-radius: 4px;
+  letter-spacing: 0.12em; font-family: var(--fj-en);
+}
+
+/* ============ Numbers ============ */
+.numbers .num-item {
+  border: 1px solid #eee; border-radius: 6px; background: #fff;
+  box-shadow: 0 2px 10px rgba(34,24,21,0.04);
+}
+.numbers .num-value { color: var(--fj-purple); font-family: var(--fj-en); font-weight: 800; }
+.numbers .num-label { color: var(--fj-gray); }
+
+/* ============ Info table ============ */
+.info-table th { background: var(--fj-purple-pale); color: var(--fj-ink); border-color: #e5d5e6; }
+.info-table td { border-color: #e9e4ea; }
+
+/* ============ Section nav ============ */
+.section-nav { background: #fff; border-bottom: 1px solid #eee; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.section-nav a { color: var(--fj-ink); font-weight: 500; }
+.section-nav a:hover { color: var(--fj-purple); text-decoration: none; }
+
+/* ============ CTA ============ */
+.cta-box {
+  border: none; border-radius: 8px; color: #fff;
+  background:
+    radial-gradient(700px 300px at 90% -30%, rgba(237,108,0,0.35), transparent 60%),
+    linear-gradient(120deg, var(--fj-purple-dark), var(--fj-purple));
+  padding: 40px;
+}
+.cta-box .cta-txt { color: #fff; }
+.cta-box .btn { background: var(--fj-orange); border-color: var(--fj-orange); }
+.cta-box .btn:hover { background: #c95c00; }
+.cta-box .btn.outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.7); }
+.cta-box .btn.outline:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+/* ============ News ============ */
+.news-list { border-top-color: #eee; }
+.news-list .news-item { border-bottom-color: #eee; }
+.news-list .news-item:hover { background: var(--fj-bg); }
+.news-list .news-date { font-family: var(--fj-en); color: var(--fj-gray); }
+.news-list .news-cat {
+  border: 1px solid var(--fj-purple); color: var(--fj-purple);
+  border-radius: 999px; background: #fff;
+}
+
+/* ============ Forms ============ */
+.form-row input, .form-row textarea, .form-row select { border: 1px solid #ccc; border-radius: 4px; }
+.form-row input:focus, .form-row textarea:focus, .form-row select:focus {
+  outline: 2px solid var(--fj-purple-light); border-color: var(--fj-purple);
+}
+
+/* ============ Footer ============ */
+.site-footer { background: var(--fj-ink); }
+.site-footer h4 { border-bottom-color: rgba(255,255,255,0.15); letter-spacing: 0.08em; }
+.site-footer .footer-logo { border: none; padding: 0; }
+.site-footer .footer-logo img { height: 40px; width: auto; filter: brightness(0) invert(1); opacity: 0.95; }
+.site-footer a:hover { color: var(--fj-purple-light); text-decoration: none; }
+.site-footer .copyright { border-top-color: rgba(255,255,255,0.12); font-family: var(--fj-en); letter-spacing: 0.08em; }
+
+/* ============ History timeline ============ */
+.hist-head { background: var(--fj-purple-dark); border-right-color: rgba(255,255,255,0.2); }
+.hist-cell.milestone { background: var(--fj-purple-pale); }
+.hist-cell.milestone .era { color: var(--fj-purple); }
+.hist-cell .era { font-family: var(--fj-en); }
+.hist-cell.future {
+  background:
+    radial-gradient(800px 400px at 85% -20%, rgba(237,108,0,0.25), transparent 60%),
+    linear-gradient(120deg, #2A0E2C, var(--fj-purple-dark));
+}
+.hist-cell.future .era { border-color: var(--fj-purple-light); }
+.hist-grid { border-color: #d9cdda; }
+.contribution { border: 2px solid var(--fj-purple); border-radius: 6px; }
+
+/* ============ FAQ ============ */
+.faq-item {
+  background: #fff; border: 1px solid #eee; border-radius: 6px;
+  padding: 20px 24px; margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(34,24,21,0.04);
+}
+.faq-q {
+  font-weight: 700; font-size: 15px; position: relative; padding-left: 34px;
+  color: var(--fj-ink); margin-bottom: 10px;
+}
+.faq-q::before {
+  content: "Q"; position: absolute; left: 0; top: -2px;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--fj-purple); color: #fff;
+  font-family: var(--fj-en); font-weight: 700; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+}
+.faq-a {
+  font-size: 13.5px; color: var(--fj-gray); line-height: 1.9;
+  position: relative; padding-left: 34px;
+}
+.faq-a::before {
+  content: "A"; position: absolute; left: 0; top: -2px;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--fj-orange); color: #fff;
+  font-family: var(--fj-en); font-weight: 700; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ============ 要確認バッジは維持（視認性UP） ============ */
+.chk { background: #C00000; border-radius: 3px; }
+
+/* ============ Responsive ============ */
+@media (max-width: 900px) {
+  .hero .catch { font-size: 34px; }
+  .cta-box { flex-direction: column; align-items: flex-start; }
+}

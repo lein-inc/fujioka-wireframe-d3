@@ -15,6 +15,8 @@ python3 "$BASE/work/_d3/build.py"
 
 TMP=$(mktemp -d)
 cp "$BASE"/work/design-*-d3.html "$TMP"/
+# 一覧ページ（WFのTOP）。平文の原本は work/_d3/index.html
+cp "$BASE/work/_d3/index.html" "$TMP"/index.html
 "$BASE/_tools/node_modules/.bin/staticrypt" "$TMP"/*.html \
   -p "$PW" --salt "$SALT" --remember 30 -d "$TMP/enc" --short >/dev/null
 cp "$TMP"/enc/*.html "$BASE/repo-d3/"

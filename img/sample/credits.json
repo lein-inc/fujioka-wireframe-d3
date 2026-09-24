@@ -246,10 +246,10 @@
   "creator": "SSC-Aviation"
  },
  "ceo": {
-  "title": "I thought it would make me full",
-  "license": "CC BY 2.0",
-  "source": "https://www.flickr.com/photos/63484346@N08/6378775593",
-  "creator": "forayinto35mm"
+  "title": "代表ポートレート（ダミー）",
+  "license": "AI生成（Google Gemini）",
+  "source": "Gemini で生成。背景は本社工場外観 L1009534 を参照",
+  "creator": "Gemini"
  },
  "csr": {
   "title": "Book Report",

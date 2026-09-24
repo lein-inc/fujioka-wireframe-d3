@@ -20,6 +20,9 @@ cp "$BASE"/work/design-*-d3.html "$TMP"/
 cp "$TMP"/enc/*.html "$BASE/repo-d3/"
 rm -rf "$TMP"
 
+# 画像は暗号化対象外。work/img に増減があれば同期する（例: logo-alpha.png）
+rsync -a --delete "$BASE/work/img/" "$BASE/repo-d3/img/"
+
 cd "$BASE/repo-d3"
 git add -A
 git -c user.name=seki -c user.email=naofumi@le-in.net commit -m "$MSG" || { echo "変更なし"; exit 0; }

@@ -1,6 +1,6 @@
 #!/bin/bash
-# 藤岡 D-3 ワイヤー（複製版）の再公開
-#   1) work/ の design-*-d3.html を staticrypt で暗号化
+# 藤岡 デザインワイヤー（D-3／v4）の再公開
+#   1) work/ の design-*-d3.html と design-*-v4.html を staticrypt で暗号化
 #   2) repo-d3 へ配置 → commit → push
 # 使い方: ./_publish.sh <github_token> "コミットメッセージ"
 set -e
@@ -12,11 +12,13 @@ TOKEN="$1"; MSG="${2:-ワイヤー更新}"
 
 # 最新のデザイン案をビルド
 python3 "$BASE/work/_d3/build.py"
+python3 "$BASE/work/_v4/build.py"
+python3 "$BASE/work/_v4/make_index.py"
 
 TMP=$(mktemp -d)
-cp "$BASE"/work/design-*-d3.html "$TMP"/
-# 一覧ページ（WFのTOP）。平文の原本は work/_d3/index.html
-cp "$BASE/work/_d3/index.html" "$TMP"/index.html
+cp "$BASE"/work/design-*-d3.html "$BASE"/work/design-*-v4.html "$TMP"/
+# 一覧ページ（WFのTOP）。v4 以降は work/_v4/index.html（make_index.py が _d3/index.html から組み直す）
+cp "$BASE/work/_v4/index.html" "$TMP"/index.html
 "$BASE/_tools/node_modules/.bin/staticrypt" "$TMP"/*.html \
   -p "$PW" --salt "$SALT" --remember 30 -d "$TMP/enc" --short >/dev/null
 cp "$TMP"/enc/*.html "$BASE/repo-d3/"

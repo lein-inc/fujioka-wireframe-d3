@@ -20,7 +20,7 @@ cp "$BASE"/work/design-*-d3.html "$BASE"/work/design-*-v4.html "$TMP"/
 # 一覧ページ（WFのTOP）。v4 以降は work/_v4/index.html（make_index.py が _d3/index.html から組み直す）
 cp "$BASE/work/_v4/index.html" "$TMP"/index.html
 "$BASE/_tools/node_modules/.bin/staticrypt" "$TMP"/*.html \
-  -p "$PW" --salt "$SALT" --remember 30 -d "$TMP/enc" --short >/dev/null
+  -p "$PW" --salt "$SALT" --remember 30 --template-color-secondary "#FFFFFF" -d "$TMP/enc" --short >/dev/null
 cp "$TMP"/enc/*.html "$BASE/repo-d3/"
 rm -rf "$TMP"
 
